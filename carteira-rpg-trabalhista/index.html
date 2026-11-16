@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111318">
+  <title>Carteira de RPG Trabalhista</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="authView" class="auth-shell">
+    <section class="auth-card">
+      <div class="brand-mark">C.R.T</div>
+      <p class="eyebrow">PLATAFORMA DE CAMPANHAS</p>
+      <h1>Carteira de RPG <span>Trabalhista</span></h1>
+      <p class="muted">Crie personagens, participe de campanhas e administre suas mesas.</p>
+      <div class="tabs">
+        <button class="tab active" data-auth-tab="login">Entrar</button>
+        <button class="tab" data-auth-tab="signup">Criar conta</button>
+      </div>
+      <form id="authForm">
+        <label id="nameWrap" class="hidden">Nome de exibição<input id="displayName" autocomplete="name" placeholder="nome do usuário"></label>
+        <label>E-mail<input id="email" type="email" autocomplete="email" required placeholder="voce@email.com"></label>
+        <label>Senha<input id="password" type="password" autocomplete="current-password" required minlength="6" placeholder="Mínimo de 6 caracteres"></label>
+        <button class="primary full" id="authSubmit">Entrar</button>
+      </form>
+      <div class="or-line"><span>OU</span></div>
+      <form id="inviteForm" class="invite-inline">
+        <label>Já tem um convite? Insira o código<input id="inviteCodeAuth" placeholder="Ex.: A7K9Q2" maxlength="12"></label>
+        <p class="hint">Você precisará entrar ou criar uma conta para aceitar o convite.</p>
+      </form>
+      <p id="authMessage" class="message" role="status"></p>
+      <p class="tiny muted">Para habilitar contas reais, configure o Supabase seguindo o README.</p>
+    </section>
+  </div>
+
+  <div id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="side-brand"><div class="brand-mark small">CR</div><div><b>Carteira de RPG</b><small>TRABALHISTA</small></div></div>
+      <nav id="mainNav">
+        <button class="nav-item active" data-page="overview">◫ <span>Visão geral</span></button>
+        <button class="nav-item" data-page="campaigns">⚑ <span>Campanhas</span></button>
+        <button class="nav-item" data-page="characters">♙ <span>Personagens</span></button>
+        <button class="nav-item" data-page="creatures">♜ <span>Criaturas</span></button>
+        <button class="nav-item" data-page="combat">⚔ <span>Combate</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="user-mini"><div class="avatar" id="userAvatar">J</div><div><b id="userName">Jogador</b><small id="userEmail">conta</small></div></div>
+        <button class="nav-item" id="signOutBtn">↪ <span>Sair</span></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><p class="eyebrow" id="pageEyebrow">SEU ESPAÇO</p><h2 id="pageTitle">Visão geral</h2></div>
+        <div class="top-actions"><span class="status-dot"></span><span class="muted small-text">Sistema online</span><button class="icon-btn" id="profileBtn" title="Perfil">⚙</button></div>
+      </header>
+      <div id="content" class="content"></div>
+      <footer>Carteira de RPG Trabalhista <span>•</span> Ferramentas para sua mesa</footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <dialog id="modal"><div class="modal-head"><h3 id="modalTitle">Detalhes</h3><button class="icon-btn" id="modalClose">✕</button></div><div id="modalBody"></div></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
