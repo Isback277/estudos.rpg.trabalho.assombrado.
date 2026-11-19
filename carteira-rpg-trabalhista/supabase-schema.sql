@@ -1,5 +1,4 @@
 -- Estrutura inicial para a versão online (Supabase / PostgreSQL).
--- Execute no SQL Editor do seu projeto Supabase depois de revisar as regras.
 create extension if not exists pgcrypto;
 
 create table if not exists public.profiles (
